@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Phone Number Input</title>
+        <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+    </head>
+    <body>
+        <p id="phone">Phone Number:</p>
+        <button id="num" onclick="addnum()">0</button>
+        <button onclick="newnum()">
+            Next
+        </button>
+        <button onclick="document.getElementById('phone').innerHTML = 'Phone Number: '">
+            Clear
+        </button>
+    </body>
+    <script>
+        function addnum(){
+            console.log(document.getElementById("phone").innerHTML.length);
+            if (document.getElementById("phone").innerHTML.length == 24){
+                window.alert("Phone number inputted!");  
+            }
+            else{
+                document.getElementById("phone").innerHTML += document.getElementById("num").innerHTML;
+            }
+        }
+        function newnum(){
+            const n = Math.floor(Math.random()*10);
+            document.getElementById("num").innerHTML = n;
+        }
+    </script>
+</html>
